@@ -1,5 +1,8 @@
 # valheim-remmidemmi-webinterface
 
+Voraussetzungen:
+git und nodeJS installiert, der gewählte Port muss freigeben werden. Getestet unter nodeJS 12.14.0.
+
 1. Repo klonen:
 `git clone https://github.com/BenjaminKauer/valheim-remmidemmi-webinterface.git`
 2. In Repo navigieren
