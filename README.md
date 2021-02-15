@@ -18,3 +18,4 @@ git und nodeJS installiert, der gewählte Port muss freigeben werden. Getestet u
 `npm i -g pm2`
 8. Applikation als Daemon starten
 `pm2 start -n valheim-ui app.js`
+9. Auszuführende Skripte ersetzen (im `bin/scripts`-Ordner)
