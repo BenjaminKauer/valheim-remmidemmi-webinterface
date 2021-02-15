@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <img src="assets/valheim_logo-image.png" height="55" id="logo" />
+    <span>RemmiDemmi - Valheim Server</span>
+</mat-toolbar>
+
+<div class=" content" role="main">
+
+    <app-login *ngIf="!(authService.isAuthenticated() | async); else controls"></app-login>
+
+    <ng-template #controls>
+        <app-controls></app-controls>
+    </ng-template>
+
+</div>
+
+
+<router-outlet></router-outlet>
