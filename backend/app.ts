@@ -23,7 +23,9 @@ const httpPort = process.env.PORT;
 
 //#region API
 app.post('/start', checkBearer, (_req: Request, _res: Response) => {
+    const success: boolean = execShellScript('start');
 
+    _res.status(success ? 200 : 500).send({});
 });
 
 app.post('/stop', checkBearer, async (_req: Request, _res: Response) => {
@@ -32,14 +34,8 @@ app.post('/stop', checkBearer, async (_req: Request, _res: Response) => {
     _res.status(success ? 200 : 500).send({});
 });
 
-app.post('/restart', checkBearer, (_req: Request, _res: Response) => {
-    const success: boolean = execShellScript('stop');
-
-    _res.status(success ? 200 : 500).send({});
-});
-
 app.post('/update', checkBearer, (_req: Request, _res: Response) => {
-    const success: boolean = execShellScript('stop');
+    const success: boolean = execShellScript('update');
 
     _res.status(success ? 200 : 500).send({});
 });
