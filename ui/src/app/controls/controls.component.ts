@@ -20,8 +20,8 @@ export class ControlsComponent implements OnInit {
     stop(): void {
         this.ctrlService.stop();
     }
-    restart(): void {
-        this.ctrlService.restart();
+    update(): void {
+        this.ctrlService.update();
     }
 
 }

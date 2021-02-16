@@ -31,17 +31,15 @@ const httpPort = process.env.PORT;
 // Serve UI
 //#region API
 app.post('/start', auth_1.checkBearer, (_req, _res) => {
+    const success = execShellScript('start');
+    _res.status(success ? 200 : 500).send({});
 });
 app.post('/stop', auth_1.checkBearer, (_req, _res) => __awaiter(void 0, void 0, void 0, function* () {
     const success = execShellScript('stop');
     _res.status(success ? 200 : 500).send({});
 }));
-app.post('/restart', auth_1.checkBearer, (_req, _res) => {
-    const success = execShellScript('stop');
-    _res.status(success ? 200 : 500).send({});
-});
 app.post('/update', auth_1.checkBearer, (_req, _res) => {
-    const success = execShellScript('stop');
+    const success = execShellScript('update');
     _res.status(success ? 200 : 500).send({});
 });
 app.post('/login', auth_1.checkBearer, (_req, _res) => {

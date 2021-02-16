@@ -17,8 +17,8 @@ export class ControlService {
         this.callApi('stop');
     }
 
-    restart(): void {
-        this.callApi('restart');
+    update(): void {
+        this.callApi('update');
     }
 
     private callApi(endpoint: string): void {
